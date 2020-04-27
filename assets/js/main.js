@@ -150,6 +150,40 @@
     $(this).find('.btn-get-started').addClass('animated fadeInUp');
   });
 
+
+    // Mirror carousel
+  var mirrorCarousel = $("#mirrorCarousel");
+  var mirrorCarouselIndicators = $("#mirror-carousel-indicators");
+  mirrorCarousel.find(".carousel-inner").children(".carousel-item").each(function(index) {
+    (index === 0) ?
+    mirrorCarouselIndicators.append("<li data-target='#mirrorCarousel' data-slide-to='" + index + "' class='active'></li>"):
+    mirrorCarouselIndicators.append("<li data-target='#mirrorCarousel' data-slide-to='" + index + "'></li>");
+  });
+
+  mirrorCarousel.on('slid.bs.carousel', function(e) {
+    $(this).find('h2').addClass('animated fadeInDown');
+    $(this).find('p').addClass('animated fadeInUp');
+    $(this).find('.btn-get-started').addClass('animated fadeInUp');
+  });
+
+
+    // Mirror 2 carousel
+  var mirror2Carousel = $("#mirror2Carousel");
+  var mirror2CarouselIndicators = $("#mirror2-carousel-indicators");
+  mirror2Carousel.find(".carousel-inner").children(".carousel-item").each(function(index) {
+    (index === 0) ?
+    mirror2CarouselIndicators.append("<li data-target='#mirror2Carousel' data-slide-to='" + index + "' class='active'></li>"):
+    mirror2CarouselIndicators.append("<li data-target='#mirror2Carousel' data-slide-to='" + index + "'></li>");
+  });
+
+  mirror2Carousel.on('slid.bs.carousel', function(e) {
+    $(this).find('h2').addClass('animated fadeInDown');
+    $(this).find('p').addClass('animated fadeInUp');
+    $(this).find('.btn-get-started').addClass('animated fadeInUp');
+  });
+
+
+
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
